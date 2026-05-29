@@ -5,6 +5,8 @@ in the first person — turning Germany's intimidating, jargon-heavy energy tran
 into a 2-minute friendly conversation that ends with a concrete, personalized
 savings plan.
 
+> **🔗 Live demo: https://ask-your-home.netlify.app/**
+
 - **Team:** 01
 - **Members:** Ali Kodak, Ayman Karim, Alpha Saliou Diallo
 - **Challenge / Track:** Kenergy Solutions GmbH — LAUNCH Rhein-Main Build Days
@@ -73,6 +75,14 @@ The tangible demonstration is the **running app itself**, including a built-in
 **pitch slide deck** (with a live iPhone-in-Safari mockup beside the slides) that
 flows straight into the live product.
 
+### Try it live (no setup)
+
+**→ https://ask-your-home.netlify.app/**
+
+Deployed on Netlify. The LLM chat runs through a serverless function
+(`/.netlify/functions/chat`) so the OpenRouter key stays server-side and is never
+exposed to the browser.
+
 ### Run it locally
 
 ```bash
@@ -104,8 +114,10 @@ npm run dev          # → http://localhost:5173
 
 - **Frontend:** React 18 + TypeScript (strict) + Vite 6
 - **Styling:** Tailwind CSS 4 (custom design tokens), inline-SVG mascot "Habi"
-- **AI backend:** OpenRouter, called through a **server-side Vite middleware**
-  (`POST /api/chat`) so the API key never reaches the browser
+- **AI backend:** OpenRouter, called server-side so the API key never reaches the
+  browser — via a **Vite middleware** locally (`POST /api/chat`) and a **Netlify
+  Function** in production (`netlify/functions/chat.mjs`)
+- **Deploy:** Netlify (static `dist/` + serverless functions; key as a Netlify env var)
 - **Data:** local TABULA building typology + ETHOS lookup, deterministic
   savings/plan calculation and profile classification (M1–M3 / E1–E4)
 
