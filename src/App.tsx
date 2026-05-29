@@ -74,7 +74,7 @@ const uid = () => ++counter
 // Pitch-Mockup: Mit ?app=<screen> startet die App direkt in einem bestimmten
 // Screen (für den iPhone-Rahmen der Slides) und überspringt die Pitch-Slides.
 // Demo-Screens (plan/reveal) nutzen ein festes Demo-Profil; der Plan wird rein
-// lokal/deterministisch berechnet – kein Netzwerk, kein LLM.
+// lokal/deterministisch berechnet, kein Netzwerk, kein LLM.
 const APP_SCREEN =
   typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('app') : null
 
@@ -201,12 +201,12 @@ export default function App() {
     const adr = `${addr.street} ${addr.houseNumber}`.trim()
     if (match.matched) {
       await houseSay(
-        `Hi, I'm Habi — your home. I had a look at the building data for ${adr}: I'm a ${match.archetypLabel} in ${ortStr}. There are still a few things I don't know — let's clear those up quickly.`,
+        `Hi, I'm Habi, your home. I had a look at the building data for ${adr}: I'm a ${match.archetypLabel} in ${ortStr}. There are still a few things I don't know, let's clear those up quickly.`,
         700,
       )
     } else {
       await houseSay(
-        `Hi, I'm Habi — your home! Now I know my address: ${adr} in ${ortStr}. You told me I'm a ${match.archetypLabel}. Help me with a few details and my plan gets concrete.`,
+        `Hi, I'm Habi, your home! Now I know my address: ${adr} in ${ortStr}. You told me I'm a ${match.archetypLabel}. Help me with a few details and my plan gets concrete.`,
         700,
       )
     }
@@ -294,7 +294,7 @@ export default function App() {
       const msg =
         res.error?.kind === 'auth'
           ? 'My online knowledge isn’t connected right now, but your plan above is still ready for you.'
-          : 'Oops, I can’t get through at the moment. Try again in a sec — your plan above stays valid, of course.'
+          : 'Oops, I can’t get through at the moment. Try again in a sec, your plan above stays valid, of course.'
       setItems((prev) => [...prev, { id: uid(), kind: 'house', text: msg }])
     }
   }
@@ -355,7 +355,7 @@ export default function App() {
         <HouseMascot size={46} className="shrink-0" />
         <div className="flex-1">
           <h1 className="text-lg font-bold leading-tight text-ink">Ask Your Home</h1>
-          <p className="text-sm text-muted">Hi, I’m Habi — your home, talking energy</p>
+          <p className="text-sm text-muted">Hi, I’m Habi, your home, talking energy</p>
         </div>
       </header>
 

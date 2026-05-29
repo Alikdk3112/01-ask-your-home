@@ -46,11 +46,11 @@ const SLIDES: SlideDef[] = [
     body: () => (
       <div className="space-y-5">
         <p className="text-xl leading-relaxed text-ink-soft [overflow-wrap:anywhere] sm:text-2xl">
-          We turned the energy transition into a conversation — with the one thing
+          We turned the energy transition into a conversation, with the one thing
           that knows the building best:{' '}
           <span className="font-semibold text-ink">the home itself.</span>
         </p>
-        <p className="text-base text-muted sm:text-lg">Meet <span className="font-semibold text-ink">Habi</span> — an AI energy advisor that speaks in the first person.</p>
+        <p className="text-base text-muted sm:text-lg">Meet <span className="font-semibold text-ink">Habi</span>, an AI energy advisor that speaks in the first person.</p>
       </div>
     ),
   },
@@ -71,7 +71,7 @@ const SLIDES: SlideDef[] = [
           </li>
           <li className="flex gap-3">
             <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand" />
-            <span>Tenants assume they can do nothing — and give up before they start.</span>
+            <span>Tenants assume they can do nothing, and give up before they start.</span>
           </li>
         </ul>
         <div className="grid grid-cols-2 gap-4">
@@ -84,7 +84,7 @@ const SLIDES: SlideDef[] = [
   {
     icon: Sparkles,
     kicker: 'The solution',
-    title: 'Your home interviews you — then hands you a plan',
+    title: 'Your home interviews you, then hands you a plan',
     body: () => (
       <div className="space-y-5">
         <p className="text-lg leading-relaxed text-ink-soft [overflow-wrap:anywhere] sm:text-xl">
@@ -104,7 +104,7 @@ const SLIDES: SlideDef[] = [
   },
   {
     icon: Wand2,
-    kicker: 'Prototype — live in a moment',
+    kicker: 'Prototype, live in a moment',
     title: 'A working product, not a mockup',
     body: () => (
       <div className="space-y-5">
@@ -113,7 +113,7 @@ const SLIDES: SlideDef[] = [
           {[
             'Tell the home who you are (tenant / owner, building, area)',
             'It pulls its own building data from your address',
-            'A live AI interview fills the gaps — wording generated on the fly',
+            'A live AI interview fills the gaps, wording generated on the fly',
             'The savings reveal + a personalized, ranked plan',
           ].map((t, i) => (
             <li key={i} className="flex items-center gap-3">
@@ -144,7 +144,7 @@ const SLIDES: SlideDef[] = [
             <div className="mb-2 inline-flex items-center gap-2 text-base font-semibold text-success">
               <Home className="h-5 w-5" strokeWidth={2} /> Owner
             </div>
-            <p className="text-base text-ink-soft [overflow-wrap:anywhere]">Insulation, heat pumps, solar — with grants and a solar partner handoff.</p>
+            <p className="text-base text-ink-soft [overflow-wrap:anywhere]">Insulation, heat pumps, solar, plus grants and a solar partner handoff.</p>
           </div>
         </div>
         <p className="text-base text-muted [overflow-wrap:anywhere] sm:text-lg">
@@ -160,7 +160,7 @@ const SLIDES: SlideDef[] = [
     body: () => (
       <div className="space-y-6">
         <p className="text-lg leading-relaxed text-ink-soft [overflow-wrap:anywhere] sm:text-xl">
-          Buildings cause <span className="font-semibold text-ink">~30% of Germany&apos;s CO₂</span> —
+          Buildings cause <span className="font-semibold text-ink">~30% of Germany&apos;s CO₂</span>,
           and home heating is the single biggest lever. The measures that cut bills are the
           exact same ones that cut emissions.
         </p>
@@ -175,7 +175,7 @@ const SLIDES: SlideDef[] = [
           </div>
         </div>
         <p className="text-base text-muted [overflow-wrap:anywhere] sm:text-lg">
-          We make the climate-smart choice the <span className="font-semibold text-ink">profitable</span> one —
+          We make the climate-smart choice the <span className="font-semibold text-ink">profitable</span> one,
           turning millions of homes into the easiest win of the energy transition.
         </p>
       </div>
@@ -190,7 +190,7 @@ const SLIDES: SlideDef[] = [
         <div className="rounded-2xl bg-success-50 px-5 py-4">
           <div className="text-lg font-semibold text-success">Main revenue: affiliate links</div>
           <p className="mt-1 text-base text-ink-soft [overflow-wrap:anywhere]">
-            Each measure links to a provider — we earn a commission on every conversion.
+            Each measure links to a provider, and we earn a commission on every conversion.
           </p>
         </div>
         <ul className="space-y-3 text-lg text-ink-soft [overflow-wrap:anywhere] sm:text-xl">
@@ -200,7 +200,7 @@ const SLIDES: SlideDef[] = [
           </li>
           <li className="flex gap-3">
             <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand" />
-            <span><span className="font-semibold text-ink">B2B2C reach</span> via Kenergy &amp; municipal utilities — they bring the homes.</span>
+            <span><span className="font-semibold text-ink">B2B2C reach</span> via Kenergy &amp; municipal utilities: they bring the homes.</span>
           </li>
           <li className="flex gap-3">
             <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-brand" />
@@ -226,7 +226,7 @@ const SLIDES: SlideDef[] = [
 // Demo-Screens (reveal/plan) seeden ein festes Demo-Profil, rein lokal berechnet.
 const SCREEN_BY_SLIDE = ['qualify', 'qualify', 'reveal', 'qualify', 'plan', 'reveal', 'plan', 'reveal']
 
-// Echte App live in einem iPhone-Rahmen – als Web-App in Safari (iOS-Statusbar
+// Echte App live in einem iPhone-Rahmen, als Web-App in Safari (iOS-Statusbar
 // oben, Safari-Adressleiste unten). Logische 390-px-Breite, per transform auf den
 // Bildschirm-Innenraum skaliert. Pro Slide ein anderer Screen.
 function PhoneMock({ screen }: { screen: string }) {
@@ -248,7 +248,7 @@ function PhoneMock({ screen }: { screen: string }) {
         <div className="relative flex-1 overflow-hidden bg-white">
           <iframe
             key={screen}
-            title="Ask Your Home — live preview"
+            title="Ask Your Home live preview"
             src={`?app=${screen}`}
             className="origin-top-left border-0"
             style={{ width: 390, height: 720, transform: 'scale(0.7026)' }}
