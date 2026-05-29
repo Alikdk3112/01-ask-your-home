@@ -250,7 +250,7 @@ export function Phase1({ onComplete }: Props) {
                     onComplete({ ownership, buildingType: buildingType!, plz, estimate })
                   }
                 >
-                  <Zap className="h-5 w-5" /> Create my concrete plan
+                  <Zap className="h-5 w-5" /> Speak with my home Habi
                 </button>
                 {!showCalc ? (
                   <button type="button" className="ks-btn-ghost" onClick={() => setShowCalc(true)}>
