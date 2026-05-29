@@ -1,0 +1,293 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Kenergy Design-Tokens */
+  --color-ink: #1a1a2e;
+  --color-ink-soft: #4b4b66;
+  --color-muted: #6b7280;
+  --color-line: #e3e8f0;
+
+  --color-brand: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+
+  --color-success: #16a34a;
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+
+  --color-warn: #f59e0b;
+  --color-surface: #f7f9fc;
+
+  --shadow-card: 0 1px 3px rgba(26, 26, 46, 0.08), 0 8px 24px rgba(26, 26, 46, 0.05);
+  --shadow-lift: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    margin: 0;
+    color: var(--color-ink);
+    background:
+      radial-gradient(1200px 800px at 12% -8%, #eef3ff 0%, transparent 55%),
+      radial-gradient(1000px 700px at 100% 0%, #f3eeff 0%, transparent 50%),
+      linear-gradient(180deg, #fbfcff 0%, #f4f7fd 100%);
+    background-attachment: fixed;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  ::selection {
+    background: var(--color-brand-100);
+  }
+}
+
+@layer components {
+  .ks-card {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-card);
+  }
+
+  /* Antwort-Button (Preset) */
+  .ks-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    min-height: 52px;
+    padding: 0.75rem 1.1rem;
+    border-radius: 0.9rem;
+    border: 1.5px solid var(--color-line);
+    background: #fff;
+    color: var(--color-ink);
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .ks-pill:hover {
+    border-color: var(--color-brand);
+    background: var(--color-brand-50);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+  .ks-pill:active {
+    transform: translateY(0);
+  }
+
+  .ks-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 52px;
+    padding: 0.75rem 1.4rem;
+    border-radius: 0.9rem;
+    border: none;
+    background: var(--color-brand);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .ks-btn:hover {
+    background: var(--color-brand-600);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lift);
+  }
+  .ks-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .ks-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 48px;
+    padding: 0.625rem 1.1rem;
+    border-radius: 0.9rem;
+    border: 1.5px solid var(--color-line);
+    background: #fff;
+    color: var(--color-ink-soft);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+  .ks-btn-ghost:hover {
+    border-color: var(--color-brand);
+    color: var(--color-brand-600);
+  }
+
+  .ks-input {
+    width: 100%;
+    min-height: 52px;
+    padding: 0.75rem 1rem;
+    border-radius: 0.9rem;
+    border: 1.5px solid var(--color-line);
+    background: #fff;
+    color: var(--color-ink);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .ks-input:focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 3px var(--color-brand-100);
+  }
+
+  /* Chat-Bubbles */
+  .bubble {
+    background: #fff;
+    border: 1px solid var(--color-line);
+    border-radius: 1.1rem 1.1rem 1.1rem 0.25rem;
+    padding: 0.9rem 1.1rem;
+    box-shadow: var(--shadow-card);
+    line-height: 1.55;
+  }
+  .bubble-user {
+    background: var(--color-brand);
+    color: #fff;
+    border-radius: 1.1rem 1.1rem 0.25rem 1.1rem;
+    padding: 0.8rem 1.05rem;
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  .animate-rise {
+    animation: rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .animate-fade {
+    animation: fade 0.4s ease both;
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: var(--color-muted);
+    animation: blink 1.4s infinite both;
+  }
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  @keyframes blink {
+    0%, 80%, 100% {
+      opacity: 0.25;
+      transform: translateY(0);
+    }
+    40% {
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+  }
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 8px;
+  }
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    background: #d7deea;
+    border-radius: 9999px;
+  }
+
+  /* Habi – Maskottchen-Animationen */
+  .mascot {
+    transform-origin: center bottom;
+    animation: mascot-bob 3.4s ease-in-out infinite;
+    overflow: visible;
+  }
+  .mascot-eyes {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mascot-blink 5s infinite;
+  }
+  .mascot-mouth-talk {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: mascot-talk 0.55s ease-in-out infinite;
+  }
+  .mascot-smoke1 {
+    transform-box: fill-box;
+    animation: mascot-smoke 2.6s ease-out infinite;
+  }
+  .mascot-smoke2 {
+    transform-box: fill-box;
+    animation: mascot-smoke 2.6s ease-out 1.3s infinite;
+  }
+  @keyframes mascot-bob {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6%);
+    }
+  }
+  @keyframes mascot-blink {
+    0%, 92%, 100% {
+      transform: scaleY(1);
+    }
+    96% {
+      transform: scaleY(0.1);
+    }
+  }
+  @keyframes mascot-talk {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(0.45);
+    }
+  }
+  @keyframes mascot-smoke {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(0.6);
+    }
+    30% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-8px) scale(1.1);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mascot,
+    .mascot-eyes,
+    .mascot-mouth-talk,
+    .mascot-smoke1,
+    .mascot-smoke2 {
+      animation: none;
+    }
+  }
+}
