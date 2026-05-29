@@ -7,6 +7,7 @@ import {
   Copy,
   Home,
   KeyRound,
+  Leaf,
   Lock,
   MessageCircleHeart,
   Share,
@@ -153,6 +154,34 @@ const SLIDES: SlideDef[] = [
     ),
   },
   {
+    icon: Leaf,
+    kicker: 'Impact',
+    title: 'Every euro saved is also CO₂ saved',
+    body: () => (
+      <div className="space-y-6">
+        <p className="text-lg leading-relaxed text-ink-soft [overflow-wrap:anywhere] sm:text-xl">
+          Buildings cause <span className="font-semibold text-ink">~30% of Germany&apos;s CO₂</span> —
+          and home heating is the single biggest lever. The measures that cut bills are the
+          exact same ones that cut emissions.
+        </p>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="rounded-2xl bg-success-50 px-5 py-5 text-center">
+            <div className="text-3xl font-bold text-success">€100s</div>
+            <div className="mt-1 text-sm text-ink-soft">saved per home / year</div>
+          </div>
+          <div className="rounded-2xl bg-success-50 px-5 py-5 text-center">
+            <div className="text-3xl font-bold text-success">~1 t</div>
+            <div className="mt-1 text-sm text-ink-soft">CO₂ avoided per home / year</div>
+          </div>
+        </div>
+        <p className="text-base text-muted [overflow-wrap:anywhere] sm:text-lg">
+          We make the climate-smart choice the <span className="font-semibold text-ink">profitable</span> one —
+          turning millions of homes into the easiest win of the energy transition.
+        </p>
+      </div>
+    ),
+  },
+  {
     icon: Coins,
     kicker: 'Business potential',
     title: 'Every recommendation is a high-intent referral',
@@ -195,7 +224,7 @@ const SLIDES: SlideDef[] = [
 
 // Welcher Live-Screen je Slide im Mockup läuft (?app=<screen> in App.tsx).
 // Demo-Screens (reveal/plan) seeden ein festes Demo-Profil, rein lokal berechnet.
-const SCREEN_BY_SLIDE = ['qualify', 'qualify', 'reveal', 'qualify', 'plan', 'plan', 'reveal']
+const SCREEN_BY_SLIDE = ['qualify', 'qualify', 'reveal', 'qualify', 'plan', 'reveal', 'plan', 'reveal']
 
 // Echte App live in einem iPhone-Rahmen – als Web-App in Safari (iOS-Statusbar
 // oben, Safari-Adressleiste unten). Logische 390-px-Breite, per transform auf den
