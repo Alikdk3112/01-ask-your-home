@@ -1,0 +1,31 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+
+# /api/* → Netlify Functions (server-side, key bleibt geheim)
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/geo/plz"
+  to = "/.netlify/functions/geo-plz"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/api/geo/search"
+  to = "/.netlify/functions/geo-search"
+  status = 200
+  force = true
+
+# SPA-Fallback: alle anderen Routen → index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

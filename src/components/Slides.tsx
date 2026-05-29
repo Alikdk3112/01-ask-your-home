@@ -22,7 +22,7 @@ import { HouseMascot } from './HouseMascot'
 // (iframe mit ?app=1, startet direkt in der Live-App statt im Pitch).
 
 interface SlideDef {
-  icon: ComponentType<{ className?: string; strokeWidth?: number }>
+  icon: ComponentType<{ className?: string; strokeWidth?: string | number }>
   kicker: string
   title: string
   body: ComponentType
